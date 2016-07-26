@@ -1,2 +1,20 @@
 ﻿body {
+    background-color: #ff0000;
+    overflow: hidden;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#header{
+    background-color: #ffff00;
+    margin: 5px;
+    border-radius: 5px;
+}
+#content{
+    background-color: #000000;
+    margin: 5px;
+    border-radius: 5px;
 }
