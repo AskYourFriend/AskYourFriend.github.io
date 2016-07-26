@@ -1,7 +1,5 @@
 ﻿var tt = 123;
 var a = {};
-var ref = new Firebase("https://askyourfriend-6e257.firebaseio.com");
-var obj = $firebaseObject(ref);
 
 var app = angular.module('App', ['firebase']);
 
@@ -41,6 +39,7 @@ app.run(function ($rootScope) {
 
 
 app.controller('MainCtrl', function ($rootScope, $scope, $firebaseObject) {
+    console.log('---MainCtrl');
     var ref = new Firebase("https://askyourfriend-6e257.firebaseio.com");
     var obj = $firebaseObject(ref);
 
@@ -64,4 +63,11 @@ app.controller('MainCtrl', function ($rootScope, $scope, $firebaseObject) {
     //}, function (errorObject) {
     //    console.log("The read failed: " + errorObject.code);
     //});
+});
+
+app.controller('SecondCtrl', function ($scope, $rootScope) {
+    console.log('---SecondCtrl');
+    console.log($rootScope.data);
+    console.log(a);
+    $scope.gg = 'Second';
 });
