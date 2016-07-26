@@ -12,14 +12,19 @@
     <title>AskYourFriend - Game by Alex Panov</title>
 </head>
 <body>
-    
-    <div ng-controller="MainCtrl">{{hello}}</div>
+    <span id="span1"></span>
+    <div ng-controller="MainCtrl">{{data.name}} {{hello1}} {{hello2}} {{hello3}}</div>
 
     <!-- SCRIPTS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.js"></script>
+    <!--<script defer src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.js"></script>-->
+
+
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+    <!--<script defer src="https://cdn.firebase.com/js/simple-login/1.6.2/firebase-simple-login.js"></script>-->
 
     <script src="Content/js/view.js"></script>
     <script src="Content/js/app.js"></script>
