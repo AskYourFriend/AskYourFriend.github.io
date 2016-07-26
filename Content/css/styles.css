@@ -23,4 +23,11 @@
     margin: 5px;
     border-radius: 5px;
     position: absolute;
+    padding: 0px;
+}
+
+.playref{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
 }
