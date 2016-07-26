@@ -12,9 +12,15 @@
     <title>AskYourFriend - Game by Alex Panov</title>
 </head>
 <body>
-    <span id="span1"></span>
-    <div ng-controller="MainCtrl">{{data.name}} {{hello1}} {{hello2}} {{hello3}}</div>
-    <div ng-controller="SecondCtrl">{{gg}}</div>
+    <div ng-controller="MainCtrl">
+        <input ng-model="data.name1" type="text" />
+        <input ng-model="data.name1" type="text" />
+        <br />
+        <input ng-model="data.name2" type="text" />
+        <input ng-model="data.name2" type="text" />
+    </div>
+    
+    <!--<span id="span2"></span>-->
 
     <!-- SCRIPTS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
