@@ -1,5 +1,5 @@
 ﻿body {
-    background-color: #ff0000;
+    background-color: #0000ff;
     overflow: hidden;
 }
 
@@ -9,12 +9,18 @@
 }
 
 #header{
-    background-color: #ffff00;
+    background-color: #83d3ff;
     margin: 5px;
     border-radius: 5px;
 }
 #content{
-    background-color: #000000;
+    background-color: #ffffff;
     margin: 5px;
     border-radius: 5px;
+}
+#playbutton{
+    background-color: none;
+    margin: 5px;
+    border-radius: 5px;
+    position: absolute;
 }
