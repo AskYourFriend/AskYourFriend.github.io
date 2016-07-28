@@ -6,7 +6,6 @@ app.run(function ($rootScope, $firebaseObject) {
     $rootScope.data = {};
     var obj = $firebaseObject(ref);
     obj.$bindTo($rootScope, 'data');
-    window.location = "http://new-website.com";
 });
 
 app.controller('MainCtrl', function ($rootScope, $scope, $firebaseObject) {

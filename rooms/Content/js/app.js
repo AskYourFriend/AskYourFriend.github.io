@@ -14,10 +14,6 @@ app.run(function ($rootScope, $firebaseObject) {
         .catch(function () { console.log('error loading!'); });
 });
 
-//app.controller('MainCtrl', function ($rootScope, $scope, $firebaseObject) {
-    
-//});
-
 app.controller('BlueRoomCtrl', function ($scope, $rootScope, $firebaseObject) {
     $scope.hello = 'world';
     $rootScope.$watch('data', function (newValue, oldValue) {
@@ -31,12 +27,6 @@ app.controller('BlueRoomCtrl', function ($scope, $rootScope, $firebaseObject) {
         if ((($.cookie('CurrentUserIndex') != null) && ($.cookie('CurrentUserIndex') != 'null')) && (newValue.rooms.blue.Members.length >= 4)) {
             RedirectToPlay();
         }
-        //if (parseInt(($.cookie('CurrentUserIndex')) >= 0) && (newValue.rooms.blue.Members.length >= 4)) {
-        //    RedirectToPlay();
-        //}
-        //if (XOR(($.cookie('CurrentUserIndex') != null), ($.cookie('CurrentUserIndex') != 'null')) && (newValue.rooms.blue.Members.length >= 4)) {
-        //    RedirectToPlay();
-        //}
     });
     $scope.AddUser = function () {
         if ($scope.newnickname != '') {
@@ -76,14 +66,8 @@ app.controller('MainCtrl', function ($scope, $rootScope, $firebaseObject) {
 });
 
 function RedirectToPlay() {
-    alert('Redirect to play');
+    window.location = "/play";
 }
 function GoOut() {
-    alert('You can not play');
-}
-
-function XOR(a, b) {
-    a = Boolean(a);
-    b = Boolean(b);
-    return Boolean(a != b);
+    alert('You can not play in this room!');
 }
