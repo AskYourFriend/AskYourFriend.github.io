@@ -6,8 +6,24 @@
         cursorborder: '0px',
         cursorborderradius: '3px'
     });
-    $('#AddUserBtn').show();
-    $('#RmvUserBtn').hide();
+    //if($.cookie('CurrentUserIndex') == null) {
+    //    $('#AddUserBtn').show();
+    //    $('#RmvUserBtn').hide();
+    //} else {
+    //    $('#AddUserBtn').hide();
+    //    $('#RmvUserBtn').show();
+    //}
+    if ($.cookie('CurrentUserIndex') != 'null') {
+        $('#AddUserBtn').hide();
+        $('#RmvUserBtn').show();
+    } else {
+        $('#AddUserBtn').show();
+        $('#RmvUserBtn').hide();
+    }
+    //console.log($.cookie('CurrentUserIndex') == null);
+    //console.log($.cookie('CurrentUserIndex') === null);
+    //console.log($.cookie('CurrentUserIndex') == 'null');
+    //console.log($.cookie('CurrentUserIndex') === 'null');
 });
 $(window).resize(function () {
     SetContentCss();

@@ -12,15 +12,6 @@
     <title>AskYourFriend - Game by Alex Panov</title>
 </head>
 <body>
-    <!--<div ng-controller="MainCtrl">
-        <input ng-model="data.name1" type="text" />
-        <input ng-model="data.name1" type="text" />
-        <br />
-        <input ng-model="data.name2" type="text" />
-        <input ng-model="data.name2" type="text" />
-    </div>-->
-    
-    <!-- Modal Blue -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document" ng-controller="BlueRoomCtrl">
             <div class="modal-content">
@@ -45,9 +36,6 @@
         </a>
     </header>
     <div id="content">
-        <div ng-controller="MainCtrl">
-            {{hello}}
-        </div>
         <div>
             <ul class="nav nav-tabs">
                 <li class="active"><a class="navigate room-red" data-toggle="tab" href="#red">Red room</a></li>
@@ -104,7 +92,7 @@
 
     <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
-        
+
 
     <script src="./Content/js/view.js"></script>
     <script src="./Content/js/app.js"></script>
