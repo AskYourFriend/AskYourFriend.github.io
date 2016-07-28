@@ -19,3 +19,12 @@ function SetContentCss() {
         .css('width', (document.documentElement.clientWidth - 10))
         .css('height', (document.documentElement.clientHeight - parseInt($('#header').css('height')) - 15));
 }
+
+if ($.cookie('UserNick') == null || $.cookie('UserNick') == 'null') {
+    window.history.back();
+    window.location = '/';
+} else {
+    alert('Delete cookies!');
+    //$.cookie('UserNick', null, { expires: 7, path: '/play' });
+    //$.cookie('Room', null, { expires: 7, path: '/play' });
+}
