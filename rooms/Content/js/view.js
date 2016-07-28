@@ -6,20 +6,20 @@
         cursorborder: '0px',
         cursorborderradius: '3px'
     });
-    //if($.cookie('CurrentUserIndex') == null) {
-    //    $('#AddUserBtn').show();
-    //    $('#RmvUserBtn').hide();
-    //} else {
-    //    $('#AddUserBtn').hide();
-    //    $('#RmvUserBtn').show();
-    //}
-    if ($.cookie('CurrentUserIndex') != 'null') {
-        $('#AddUserBtn').hide();
-        $('#RmvUserBtn').show();
-    } else {
+    if (($.cookie('CurrentUserIndex') == null) || ($.cookie('CurrentUserIndex') == 'null')) {
         $('#AddUserBtn').show();
         $('#RmvUserBtn').hide();
+    } else {
+        $('#AddUserBtn').hide();
+        $('#RmvUserBtn').show();
     }
+    //if ($.cookie('CurrentUserIndex') != 'null') {
+    //    $('#AddUserBtn').hide();
+    //    $('#RmvUserBtn').show();
+    //} else {
+    //    $('#AddUserBtn').show();
+    //    $('#RmvUserBtn').hide();
+    //}
     //console.log($.cookie('CurrentUserIndex') == null);
     //console.log($.cookie('CurrentUserIndex') === null);
     //console.log($.cookie('CurrentUserIndex') == 'null');

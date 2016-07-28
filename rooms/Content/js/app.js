@@ -36,7 +36,7 @@ app.controller('BlueRoomCtrl', function ($scope, $rootScope, $firebaseObject) {
                 }
                 last = i;
             }
-            if (IsUniNick) {
+            if (IsUniNick && ($rootScope.data.rooms.blue.Members.length < 4)) {
                 $rootScope.data.rooms.blue.Members.push({ nickname: $scope.newnickname });
                 last++;
                 $.cookie('CurrentUserIndex', last, { expires: 7, path: '/' });
