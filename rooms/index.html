@@ -20,31 +20,76 @@
         <input ng-model="data.name2" type="text" />
     </div>-->
     
+    <!-- Modal Blue -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document" ng-controller="BlueRoomCtrl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" ng-model="newnickname" maxlength="10" placeholder="You new nickname" class="form-control" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button ng-click="AddUser()" class="btn btn-primary">Add User</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <header id="header">
         <a href="/">
             <img src="./Content/media/img/logos/logo.png" width="50" height="50" />
         </a>
     </header>
     <div id="content">
+        <div ng-controller="MainCtrl">
+            {{hello}}
+        </div>
         <div>
             <ul class="nav nav-tabs">
-                <li class="active navigate room-red"><a data-toggle="tab" href="#red">Red room</a></li>
-                <li class="navigate room-green"><a data-toggle="tab" href="#green">Green room</a></li>
-                <li class="navigate room-blue"><a data-toggle="tab" href="#blue">Blue room</a></li>
+                <li class="active"><a class="navigate room-red" data-toggle="tab" href="#red">Red room</a></li>
+                <li><a class="navigate room-green" data-toggle="tab" href="#green">Green room</a></li>
+                <li><a class="navigate room-blue" data-toggle="tab" href="#blue">Blue room</a></li>
             </ul>
             <div class="tab-content">
                 <div id="red" class="tab-pane fade in active content room-red">
                     <h3>HOME</h3>
                     <p>Some content.</p>
-                    <p><tag>div</tag> content <tag>/div</tag></p>
+                    <p><tag>div</tag>content<tag>/div</tag></p>
                 </div>
                 <div id="green" class="tab-pane fade content room-green">
                     <h3>Menu 1</h3>
                     <p>Some content in menu 1.</p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet sodales venenatis. Aliquam id mauris sed odio auctor condimentum ac at magna. Donec sit amet posuere nulla, at laoreet lorem. Fusce augue tortor, convallis condimentum pharetra vitae, lacinia sed ligula. Morbi eget nibh erat. Nulla pellentesque massa purus, sed semper leo rhoncus quis. Integer rhoncus quis mi et fermentum. Aenean tincidunt arcu vel nulla tempor feugiat. Vivamus odio felis, sollicitudin nec aliquam et, imperdiet et odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin cursus orci a suscipit fringilla.
+
+                        Aenean cursus imperdiet commodo. Vestibulum sodales non libero sit amet sodales. Suspendisse potenti. Mauris a consectetur mauris. Pellentesque in blandit erat. Vestibulum vel elementum nisi, a porta risus. Fusce porttitor tortor lacus, vel finibus purus consectetur quis. Cras a euismod tortor. Suspendisse potenti. Praesent nec tellus nec mauris elementum venenatis. Maecenas gravida, orci eget efficitur bibendum, ex est pretium ligula, vel rutrum arcu nibh in enim.
+
+                        Nulla eu justo vel turpis euismod sagittis. Duis at accumsan quam. Cras fringilla hendrerit enim ultricies scelerisque. Cras mollis sapien dolor, vitae sollicitudin urna tempus id. Sed luctus pharetra sem, nec dapibus purus ultricies in. Etiam lobortis et ligula non gravida. Etiam semper justo vel sapien luctus, quis venenatis nibh consequat. Ut eget cursus ex. Ut quis placerat ipsum. Morbi mi ante, consectetur et dui eget, cursus vulputate eros. Mauris pulvinar porttitor volutpat. Sed lobortis justo ligula, vitae tincidunt dui mattis ut. Donec at gravida nulla, sit amet faucibus quam. Pellentesque nec risus vitae sapien tristique pharetra.
+
+                        Nam convallis tellus sapien, lacinia consectetur metus convallis sit amet. Sed aliquet viverra nulla, sit amet dignissim nibh dignissim vel. Nullam a arcu imperdiet, venenatis turpis non, pulvinar diam. Ut sit amet urna sodales, lacinia lacus nec, lacinia massa. Suspendisse potenti. Fusce dui dolor, posuere sit amet finibus vel, auctor id urna. Praesent enim ante, fermentum sit amet porttitor vitae, venenatis sit amet libero. Donec dignissim mi neque, et iaculis quam tincidunt et. Mauris sed ipsum et nibh faucibus finibus at id lorem.
+
+                        Nullam rutrum in ante sit amet vehicula. Ut volutpat blandit volutpat. Nam ac fermentum augue. Suspendisse commodo porta eros vel congue. Quisque sodales eleifend imperdiet. Aliquam feugiat, justo et porttitor venenatis, risus elit dictum arcu, quis congue diam mi nec est. Mauris nec ultricies est, ac ullamcorper felis. Pellentesque sagittis pharetra mauris, id aliquet diam porta eget. Nam eget dui id leo pellentesque gravida a nec metus. In ut posuere nibh. Phasellus commodo ipsum lectus, vitae semper arcu sagittis lacinia.
+
+                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean a lacus porta, congue mi sit amet, laoreet libero. Integer tristique odio sit amet sapien posuere, sed sagittis est finibus. Vestibulum vel justo convallis, egestas quam sit amet, hendrerit dolor. Quisque pretium, neque nec mattis mattis, ex sapien ultricies neque, tincidunt mattis diam sem eu mi. Cras non enim in dui pretium rutrum vitae ut justo. Maecenas id nunc aliquet, commodo metus non, varius ex. Sed congue dignissim dolor. Donec mauris odio, molestie ut lorem at, tincidunt sollicitudin ex. Donec ut venenatis dolor, in auctor magna. Sed in nibh elit. Vestibulum finibus diam nunc, vitae sodales libero dapibus pretium.
+
+                        Curabitur consequat augue nec leo auctor, quis auctor dolor ultrices. Mauris eget vestibulum quam. Proin tincidunt mi vel nisl laoreet vehicula. Ut placerat mauris sed libero posuere, feugiat tempus lectus pharetra. Nullam accumsan, turpis et pretium fringilla, neque ex auctor arcu, in tempor justo tortor et elit. Morbi et feugiat magna. Aliquam erat volutpat. Proin nec orci in ipsum dignissim consequat ut quis arcu. Mauris venenatis eros dictum scelerisque cursus. Etiam id ullamcorper nibh. Morbi ullamcorper, felis quis iaculis tristique, lacus arcu ultricies lectus, id facilisis nunc sem ut tortor. Donec tincidunt hendrerit est, id pellentesque sapien fermentum et. Nullam porta, arcu at tincidunt porta, lacus odio tincidunt elit, at porttitor purus lacus et sem.
+
+                        Phasellus vel blandit erat, sit amet fringilla mauris. Aliquam in molestie urna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus dignissim, nulla id semper lacinia, lacus odio accumsan urna, eget mattis leo risus at lacus. Pellentesque sagittis, nisi quis lobortis efficitur, ante lectus finibus tortor, sit amet sagittis nunc odio sed turpis. In mattis eros sed nisi dictum, aliquet pulvinar nibh vulputate. Pellentesque vestibulum feugiat lacus, eget maximus turpis maximus ornare. Donec rutrum porttitor diam vel elementum. Quisque tincidunt augue in ligula lacinia dignissim. Nunc id tellus eu lorem rhoncus tincidunt. Ut nec neque erat. Quisque vel ex quis neque pulvinar hendrerit quis in lorem.
+
+                        Morbi eget ullamcorper tellus. Mauris volutpat venenatis lacus, non interdum turpis tincidunt a. Proin turpis dui, porttitor non lacus nec, aliquet faucibus ligula. Cras pharetra aliquam nulla. Vestibulum sollicitudin non arcu nec tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus quis leo nunc. Duis suscipit aliquam nisi, auctor vestibulum est rhoncus in. Nam metus mauris, imperdiet a venenatis vel, pulvinar eget est. Integer id dolor eros. Fusce ac diam sit amet erat scelerisque mattis nec et nulla. Integer eu ornare nisi, sed sollicitudin diam. Curabitur at massa velit. Phasellus pretium faucibus sem, sed rhoncus tortor tempor ut.
+
+                        Nunc libero elit, viverra nec neque vel, malesuada accumsan ex. Mauris eu placerat diam, ac molestie lacus. Sed porta ut nibh id volutpat. Mauris quis metus vel diam vulputate commodo in eget nunc. Phasellus ut nisl a magna placerat laoreet. Integer pulvinar volutpat enim in dapibus. Proin ullamcorper auctor luctus. Nulla quis ligula ut nunc malesuada suscipit id eget ante. Ut elementum vel lorem vel laoreet. Quisque sed lobortis enim. Morbi condimentum sed diam accumsan pretium. Morbi facilisis turpis lectus, nec mattis magna scelerisque a. Ut non purus a sapien suscipit eleifend vel in metus. Maecenas id tellus arcu. Pellentesque rhoncus, mi sit amet porttitor condimentum, mauris leo accumsan elit, quis interdum felis lorem quis turpis. Maecenas posuere nibh in enim convallis, id convallis mi rutrum.
+                    </p>
                 </div>
-                <div id="blue" class="tab-pane fade content room-blue">
-                    <h3>Menu 2</h3>
-                    <p>Some content in menu 2.</p>
+                <div id="blue" class="tab-pane fade content room-blue" ng-controller="BlueRoomCtrl">
+                    <h2>Members:</h2>
+                    <span id="blue_members"></span>
+                    <button id="AddUserBtn" ng-click="ShowModal()" class="btn btn-default">Add User</button>
+                    <button id="RmvUserBtn" ng-click="RemoveUser()" class="btn btn-default">Remove me</button>
                 </div>
             </div>
         </div>
@@ -55,6 +100,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.6.0/jquery.nicescroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 
     <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>

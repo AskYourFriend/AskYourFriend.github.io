@@ -6,6 +6,8 @@
         cursorborder: '0px',
         cursorborderradius: '3px'
     });
+    $('#AddUserBtn').show();
+    $('#RmvUserBtn').hide();
 });
 $(window).resize(function () {
     SetContentCss();
@@ -18,4 +20,9 @@ function SetContentCss() {
     $('#content')
         .css('width', (document.documentElement.clientWidth - 10))
         .css('height', (document.documentElement.clientHeight - parseInt($('#header').css('height')) - 15));
+}
+
+function ShowModal(room) {
+    $('#colorcpan').text(room);
+    $('#myModal').modal('toggle');
 }

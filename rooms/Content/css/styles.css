@@ -38,6 +38,12 @@ body {
 .navigate.room-blue{
     background-color: #0000ff;
 }
+.navigate.room-red:hover,
+.navigate.room-green:hover,
+.navigate.room-blue:hover{
+    background-color: #ffffff;
+    color: #000000;
+}
 .content.room-red{
     border: 5px solid #ff0000;
 }
@@ -68,4 +74,17 @@ tag::before{
 }
 tag::after{
     content: ">";
+}
+
+ul.nav-tabs > li.active > a.navigate.room-red{
+    background-color: #ff0000;
+    color: #ffffff;
+}
+ul.nav-tabs > li.active > a.navigate.room-green{
+    background-color: #00ff00;
+    color: #ffffff;
+}
+ul.nav-tabs > li.active > a.navigate.room-blue{
+    background-color: #0000ff;
+    color: #ffffff;
 }
