@@ -13,17 +13,6 @@
         $('#AddUserBtn').hide();
         $('#RmvUserBtn').show();
     }
-    //if ($.cookie('CurrentUserIndex') != 'null') {
-    //    $('#AddUserBtn').hide();
-    //    $('#RmvUserBtn').show();
-    //} else {
-    //    $('#AddUserBtn').show();
-    //    $('#RmvUserBtn').hide();
-    //}
-    //console.log($.cookie('CurrentUserIndex') == null);
-    //console.log($.cookie('CurrentUserIndex') === null);
-    //console.log($.cookie('CurrentUserIndex') == 'null');
-    //console.log($.cookie('CurrentUserIndex') === 'null');
 });
 $(window).resize(function () {
     SetContentCss();

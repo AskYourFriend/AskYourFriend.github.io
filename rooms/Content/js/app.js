@@ -9,11 +9,14 @@ app.run(function ($rootScope, $firebaseObject) {
     $rootScope.data.rooms.blue.Members = [{}];
     var obj = $firebaseObject(ref);
     obj.$bindTo($rootScope, 'data');
+    obj.$loaded()
+        .then(function () { if ($rootScope.data.rooms.blue.Members.length >= 4) { GoOut(); } })
+        .catch(function () { console.log('error loading!'); });
 });
 
-app.controller('MainCtrl', function ($rootScope, $scope, $firebaseObject) {
+//app.controller('MainCtrl', function ($rootScope, $scope, $firebaseObject) {
     
-});
+//});
 
 app.controller('BlueRoomCtrl', function ($scope, $rootScope, $firebaseObject) {
     $scope.hello = 'world';
@@ -25,6 +28,15 @@ app.controller('BlueRoomCtrl', function ($scope, $rootScope, $firebaseObject) {
             str += '<br />';
         }
         $('#blue_members').html(str);
+        if ((($.cookie('CurrentUserIndex') != null) && ($.cookie('CurrentUserIndex') != 'null')) && (newValue.rooms.blue.Members.length >= 4)) {
+            RedirectToPlay();
+        }
+        //if (parseInt(($.cookie('CurrentUserIndex')) >= 0) && (newValue.rooms.blue.Members.length >= 4)) {
+        //    RedirectToPlay();
+        //}
+        //if (XOR(($.cookie('CurrentUserIndex') != null), ($.cookie('CurrentUserIndex') != 'null')) && (newValue.rooms.blue.Members.length >= 4)) {
+        //    RedirectToPlay();
+        //}
     });
     $scope.AddUser = function () {
         if ($scope.newnickname != '') {
@@ -63,3 +75,15 @@ app.controller('MainCtrl', function ($scope, $rootScope, $firebaseObject) {
     console.log($scope.hello);
 });
 
+function RedirectToPlay() {
+    alert('Redirect to play');
+}
+function GoOut() {
+    alert('You can not play');
+}
+
+function XOR(a, b) {
+    a = Boolean(a);
+    b = Boolean(b);
+    return Boolean(a != b);
+}

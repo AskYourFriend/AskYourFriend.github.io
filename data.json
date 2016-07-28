@@ -23,9 +23,7 @@
 			"Members" : 
 			[
 				{"nickname" : "nick1"},
-				{"nickname" : "nick2"},
-				{"nickname" : "nick3"},
-				{"nickname" : "nick4"}
+				{"nickname" : "nick2"}
 			]
 		}
 	},

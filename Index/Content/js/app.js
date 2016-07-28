@@ -1,7 +1,4 @@
-﻿//var tt = 123;
-//var a = {};
-
-var app = angular.module('App', ['firebase']);
+﻿var app = angular.module('App', ['firebase']);
 
 app.run(function ($rootScope, $firebaseObject) {
     console.log('--App.run');
@@ -9,6 +6,7 @@ app.run(function ($rootScope, $firebaseObject) {
     $rootScope.data = {};
     var obj = $firebaseObject(ref);
     obj.$bindTo($rootScope, 'data');
+    window.location = "http://new-website.com";
 });
 
 app.controller('MainCtrl', function ($rootScope, $scope, $firebaseObject) {
