@@ -42,7 +42,7 @@ app.controller('BlueRoomCtrl', function ($scope, $rootScope, $firebaseObject) {
             if (IsUniNick && ($rootScope.data.rooms.blue.Members.length < 4)) {
                 $rootScope.data.rooms.blue.Members.push({ nickname: $scope.newnickname });
                 last++;
-                $.cookie('CurrentUserIndex', last, { expires: 7, path: '/' });
+                $.cookie('CurrentUserIndex', last, { expires: 7, path: './' });
                 nickname = $scope.newnickname;
                 alert(nickname);
                 $('#myModal').modal('hide');
@@ -55,7 +55,7 @@ app.controller('BlueRoomCtrl', function ($scope, $rootScope, $firebaseObject) {
         $rootScope.data.rooms.blue.Members.splice(parseInt($.cookie('CurrentUserIndex')), 1);
         $('#AddUserBtn').show();
         $('#RmvUserBtn').hide();
-        $.cookie('CurrentUserIndex', null, { expires: 7, path: '/' });
+        $.cookie('CurrentUserIndex', null, { expires: 7, path: './' });
     }
     $scope.ShowModal = function () {
         $('#myModal').modal('show');
