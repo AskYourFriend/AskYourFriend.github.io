@@ -1,0 +1,34 @@
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script>
+function closeIt()
+{
+  //return "any string value here forces a dialog box to \n" + 
+  //       "appear before closing the window.";
+	console.log("hello world");
+}
+window.onbeforeunload = closeIt;
+
+/*function checkCart() { 
+  $.ajax({
+    url : 'index.php?route=module/cart/check',
+    type : 'POST',
+    dataType : 'json',
+    success : function (result) {
+       if (result) {
+        $(window).bind('beforeunload', function(){
+          return 'leave?';
+        });
+       }
+    }
+  })
+}*/
+
+</script>
+</head>
+<body>
+  <a href="http://www.somewhere.com">Click here to navigate to 
+      www.somewhere.com</a>
+</body>
+</html>
