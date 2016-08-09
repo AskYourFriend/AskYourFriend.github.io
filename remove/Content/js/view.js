@@ -1,4 +1,4 @@
-﻿$(document).ready(function () {
+﻿$(docum$(document).ready(function () {
     SetContentCss();
     $('#content').niceScroll({
         cursorcolor: '#000000',
