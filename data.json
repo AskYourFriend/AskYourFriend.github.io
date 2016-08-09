@@ -1,4 +1,9 @@
 {
 	"name1": "value",
-	"name2": "value"
+	"name2": "value",
+	"canplay": true,
+	"time": 0,
+	"members": [
+		{"nickname": "nick1"},
+	]
 }
