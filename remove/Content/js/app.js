@@ -5,7 +5,7 @@ var app = angular.module('App', ['firebase']);
 
 app.run(function ($rootScope, $firebaseObject) {
     console.log('--App.run');
-    var ref = new Firebase("https://askyourfriend-6e257.firebaseio.com");
+    var ref = new Firebase("https://voteua-d239d.firebaseio.com");
     $rootScope.data = {};
     var obj = $firebaseObject(ref);
     obj.$bindTo($rootScope, 'data');

@@ -13,6 +13,20 @@
 				"count": 1
 				}
 			]
+		},{
+			"owner": "Alex",
+			"password": "password",
+			"nick": "vote2",
+			"name": "Vote #2",
+			"desc": "my second vote",
+			"answers": [{
+				"name": "Yes",
+				"count": 2
+				},{
+				"name": "No",
+				"count": 1
+				}
+			]
 		}
 	]
 }

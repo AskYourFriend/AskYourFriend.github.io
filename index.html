@@ -5,21 +5,28 @@
     <!-- STYLES -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css" />
 
-    <link href="./Index/Content/css/styles.css" rel="stylesheet" />
+    <link href="/Content/css/styles.css" rel="stylesheet" />
     <!-- / STYLES -->
 
-    <link rel="shortcut icon" href="./Index/Content/media/img/logos/favicon.ico" />
+    <link rel="shortcut icon" href="/Content/media/img/logos/favicon.ico" />
     <title>AskYourFriend - Game by Alex Panov</title>
 </head>
 <body>
     <header id="header">
         <a href="/">
-            <img src="./Content/media/img/logos/logo.png" width="50" height="50" />
+            <img src="/Content/media/img/logos/logo.png" width="50" height="50" />
         </a>
     </header>
-    <div id="content">
-        <div ng-repeat="vote in data.votes">
-
+    <div id="content" ng-controller="MainCtrl">
+        <div class="col-md-4">
+            <button ng-repeat="vote in data.votes" ng-click="showVote($index)" class="btn btn-primary">
+                {{vote.name}}
+            </button>
+        </div>
+        <div class="col-md-8">
+            <h1>{{name}}</h1>
+            <h3>{{desc}}</h3>
+            <button class="btn btn-success" ng-repeat="answ in answers">{{answ.name}} ({{answ.count}})</button>
         </div>
     </div>
 
@@ -31,10 +38,10 @@
 
     <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
-        
 
-    <script src="./Index/Content/js/view.js"></script>
-    <script src="./Index/Content/js/app.js"></script>
+
+    <script src="/Index/Content/js/view.js"></script>
+    <script src="/Index/Content/js/app.js"></script>
     <!-- / SCRIPTS -->
 </body>
 </html>
