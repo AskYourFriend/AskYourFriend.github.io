@@ -9,8 +9,9 @@ app.run(function ($rootScope, $firebaseObject) {
     $rootScope.data = {};
     var obj = $firebaseObject(ref);
     obj.$bindTo($rootScope, 'data');
+    obj.$loaded,
 });
 
 app.controller('MainCtrl', function ($rootScope, $scope, $firebaseObject) {
-    
+    //$rootScope.data.$watch();
 });

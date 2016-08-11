@@ -1,4 +1,18 @@
 {
-	"name1": "value",
-	"name2": "value"
+	"votes": [{
+			"owner": "Alex",
+			"password": "password",
+			"nick": "vote1",
+			"name": "Vote #1",
+			"desc": "my first vote",
+			"answers": [{
+				"name": "Yes",
+				"count": 2
+				},{
+				"name": "No",
+				"count": 1
+				}
+			]
+		}
+	]
 }
