@@ -16,13 +16,19 @@ app.run(function ($rootScope, $firebaseObject) {
 });
 
 app.controller('MainCtrl', function ($rootScope, $scope, $firebaseObject) {
-    //$rootScope.data.$watch();
+
+    //$rootScope.data = { votes: [{ answers: [{}] }] };
+    var currentvoteindex = 0;
     $scope.showVote = function(index) {
-        //$scope.ind = index;
         var curr_vote = $rootScope.data.votes[index];
         $scope.name = curr_vote.name;
         $scope.desc = curr_vote.desc;
         $scope.answers = curr_vote.answers;
+        currentvoteindex = index;
+    }
+    $scope.VoteClick = function (index) {
+        $rootScope.data.votes[currentvoteindex].answers[index].count = $rootScope.data.votes[currentvoteindex].answers[index].count + 1;
+        $scope.answers = $rootScope.data.votes[currentvoteindex].answers;
         //$scope.$apply();
     }
 });

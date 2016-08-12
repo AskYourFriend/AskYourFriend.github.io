@@ -9,7 +9,7 @@
     <!-- / STYLES -->
 
     <link rel="shortcut icon" href="/Content/media/img/logos/favicon.ico" />
-    <title>AskYourFriend - Game by Alex Panov</title>
+    <title>VoteUA - Vote now for free!</title>
 </head>
 <body>
     <header id="header">
@@ -19,14 +19,18 @@
     </header>
     <div id="content" ng-controller="MainCtrl">
         <div class="col-md-4">
-            <button ng-repeat="vote in data.votes" ng-click="showVote($index)" class="btn btn-primary">
+            <div ng-repeat="vote in data.votes">
+                <button ng-click="showVote($index)" class="btn btn-primary">
                 {{vote.name}}
-            </button>
+                </button>
+            </div>
         </div>
         <div class="col-md-8">
             <h1>{{name}}</h1>
             <h3>{{desc}}</h3>
-            <button class="btn btn-success" ng-repeat="answ in answers">{{answ.name}} ({{answ.count}})</button>
+            <div ng-repeat="answ in answers">
+                <button class="btn btn-success" ng-click="VoteClick($index)">{{answ.name}} ({{answ.count}})</button>
+            </div>
         </div>
     </div>
 
