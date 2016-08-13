@@ -9,7 +9,7 @@
     <!-- / STYLES -->
 
     <link rel="shortcut icon" href="/Content/media/img/logos/favicon.ico" />
-    <title>VoteUA - Vote now for free!</title>
+    <title>VoteUA - Manage vote</title>
 </head>
 <body>
     <header id="header">
@@ -32,6 +32,9 @@
             <button class="btn btn-primary btn-lg" ng-click="DeAuth()">
                 Log out
             </button>
+            <!--<button class="btn btn-primary btn-lg" ng-click="DeleteVote()">
+                Delete vote
+            </button>-->
         </div>
         <div ng-if="!IsAuth">
             <div class="form-group row">
@@ -55,25 +58,6 @@
                     Log in
                 </button>
             </div>
-
-            <!--<table id="answerstatistics" border="0">
-                <tr>
-                    <td>
-                        Yes
-                    </td>
-                    <td>
-                        21
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        No
-                    </td>
-                    <td>
-                        10
-                    </td>
-                </tr>
-            </table>-->
         </div>
     </div>
 

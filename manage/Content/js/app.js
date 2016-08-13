@@ -34,4 +34,10 @@ app.controller('SeeStatisticsCtrl', function ($rootScope, $scope, $firebaseObjec
         $scope.IsAuth = false;
         $scope.AuthIndex = null;
     }
+    $scope.DeleteVote = function () {
+        if (confirm("Delete vote?")) {
+            $rootScope.data.votes.splice($scope.AuthIndex, 1);
+            $scope.DeAuth();
+        }
+    }
 });
