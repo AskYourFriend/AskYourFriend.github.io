@@ -7,10 +7,10 @@
 			"desc": "my first vote",
 			"answers": [{
 				"name": "Yes",
-				"count": 2
+				"count": 0
 				},{
 				"name": "No",
-				"count": 1
+				"count": 0
 				}
 			]
 		},{
@@ -21,10 +21,10 @@
 			"desc": "my second vote",
 			"answers": [{
 				"name": "Yes",
-				"count": 2
+				"count": 0
 				},{
 				"name": "No",
-				"count": 1
+				"count": 0
 				}
 			]
 		}
