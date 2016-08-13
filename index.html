@@ -16,6 +16,17 @@
         <a href="/">
             <img src="/Content/media/img/logos/logo.png" width="50" height="50" />
         </a>
+        <div style="float: right;">
+            <a href="/add" class="btn btn-primary" data-toggle="modal" data-target="#addQuestModal" style="height: 40px; margin: 5px;">
+                Add
+            </a>
+            <a href="/remove" class="btn btn-primary" data-toggle="modal" data-target="#removeQuestModal" style="height: 40px; margin: 5px;">
+                Remove
+            </a>
+            <a href="/see" class="btn btn-primary" data-toggle="modal" data-target="#seeStatisticsModal" style="height: 40px; margin: 5px;">
+                See
+            </a>
+        </div>
     </header>
     <div id="content" ng-controller="MainCtrl">
         <div class="col-md-4">
@@ -50,7 +61,7 @@
                         <h4>(#{{nick}})</h4>
                     </div>
                     <hr />
-                    <h3>{{desc}}</h3>
+                    <h3>{{question}}</h3>
                     <hr />
                     <div style="text-align: center;">
                         <span ng-repeat="answ in answers">

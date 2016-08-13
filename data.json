@@ -4,7 +4,7 @@
 			"password": "password",
 			"nick": "vote1",
 			"name": "Vote #1",
-			"desc": "my first vote",
+			"question": "my first vote?",
 			"answers": [{
 				"name": "Yes",
 				"count": 0
@@ -18,7 +18,7 @@
 			"password": "password",
 			"nick": "vote2",
 			"name": "Vote #2",
-			"desc": "my second vote",
+			"question": "my second vote?",
 			"answers": [{
 				"name": "Yes",
 				"count": 0
