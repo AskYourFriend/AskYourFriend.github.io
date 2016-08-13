@@ -24,7 +24,7 @@ app.controller('MainCtrl', function ($rootScope, $scope, $firebaseObject) {
     //        $scope.showVote(0);
     //    }
     //});
-    var currentvoteindex = 0;
+    $scope.currentvoteindex = null;
     $scope.showVote = function (index) {
         $rootScope.selectedanyvote = true;
         var curr_vote = $rootScope.data.votes[index];
@@ -32,51 +32,43 @@ app.controller('MainCtrl', function ($rootScope, $scope, $firebaseObject) {
         $scope.desc = curr_vote.desc;
         $scope.nick = curr_vote.nick;
         $scope.answers = curr_vote.answers;
-        currentvoteindex = index;
-        $('[data-vote-select]').removeClass('active');
-        var s = '';
-        s += '[data-vote-select=';
-        s += index;
-        s += ']';
-        $(s).addClass('active');
+        $scope.currentvoteindex = index;
+        //$('[data-vote-select]').removeClass('active');
+        //console.log('remove class');
 
-        var str = currentvoteindex.toString();
+        //var s = '';
+        //s += '[data-vote-select=';
+        //s += index;
+        //s += ']';
+        //$(s).addClass('active');
+
+        var str = $scope.currentvoteindex.toString();
         if ($.cookie(str) != null && $.cookie(str) != 'null') {
             $scope.activeAnsw = parseInt($.cookie(str));
         }
         else {
             $scope.activeAnsw = null;
         }
-
-        //var str = currentvoteindex.toString();
-        //$('[data-vote-answer]').removeClass('active');
-        //if ($.cookie(str) != null && $.cookie(str) != 'null') {
-        //    var s2 = '';
-        //    s2 += '[data-vote-answer=';
-        //    s2 += $.cookie(str);
-        //    s2 += ']';
-        //    $(s2).addClass('active');
-        //    console.log($(s2));
-        //    //$(s2).each(function (index) { $(this).addClass('active'); });
-        //    s2 = null;
-        //}
     }
     $scope.VoteClick = function (index) {
-        var str = currentvoteindex.toString();
+        var str = $scope.currentvoteindex.toString();
         if ($.cookie(str) == null || $.cookie(str) == 'null') {
-            $rootScope.data.votes[currentvoteindex].answers[index].count = $rootScope.data.votes[currentvoteindex].answers[index].count + 1;
+            //$rootScope.data.votes[currentvoteindex].answers[index].count = $rootScope.data.votes[currentvoteindex].answers[index].count + 1;
+            $rootScope.data.votes[$scope.currentvoteindex].answers[index].count++;
             $.cookie(str, index.toString(), {/*expires: 366, */path: '/'});
-            //$scope.answers = $rootScope.data.votes[currentvoteindex].answers;
             $scope.activeAnsw = index;
         }
         else if (parseInt($.cookie(str)) != index) {
-            $rootScope.data.votes[currentvoteindex].answers[parseInt($.cookie(str))].count = $rootScope.data.votes[currentvoteindex].answers[parseInt($.cookie(str))].count - 1;
-            $rootScope.data.votes[currentvoteindex].answers[index].count = $rootScope.data.votes[currentvoteindex].answers[index].count + 1;
+            //$rootScope.data.votes[currentvoteindex].answers[parseInt($.cookie(str))].count = $rootScope.data.votes[currentvoteindex].answers[parseInt($.cookie(str))].count - 1;
+            //$rootScope.data.votes[currentvoteindex].answers[index].count = $rootScope.data.votes[currentvoteindex].answers[index].count + 1;
+            $rootScope.data.votes[$scope.currentvoteindex].answers[parseInt($.cookie(str))].count--;
+            $rootScope.data.votes[$scope.currentvoteindex].answers[index].count++;
             $.cookie(str, index.toString(), {/*expires: 366, */path: '/' });
             $scope.activeAnsw = index;
         }
         else if (parseInt($.cookie(str)) == index) {
-            $rootScope.data.votes[currentvoteindex].answers[index].count = $rootScope.data.votes[currentvoteindex].answers[index].count - 1;
+            //$rootScope.data.votes[currentvoteindex].answers[index].count = $rootScope.data.votes[currentvoteindex].answers[index].count - 1;
+            $rootScope.data.votes[$scope.currentvoteindex].answers[index].count--;
             $.cookie(str, null);
             $scope.activeAnsw = null;
         }

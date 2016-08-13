@@ -28,9 +28,16 @@
                 <hr />
                 <div style="text-align: center;">
                     <div ng-repeat="vote in data.votes">
-                        <button ng-click="showVote($index)" class="btn vote-select" style="width: 100%;" data-vote-select="{{$index}}">
-                            {{vote.name}}
-                        </button>
+                        <span ng-if="currentvoteindex == $index">
+                            <button ng-click="showVote($index)" class="btn vote-select active" style="width: 100%;" data-vote-select="{{$index}}">
+                                {{vote.name}}
+                            </button>
+                        </span>
+                        <span ng-if="currentvoteindex !== $index">
+                            <button ng-click="showVote($index)" class="btn vote-select" style="width: 100%;" data-vote-select="{{$index}}">
+                                {{vote.name}}
+                            </button>
+                        </span>
                     </div>
                 </div>
             </div>
