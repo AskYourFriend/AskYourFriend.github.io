@@ -5,7 +5,7 @@
     <!-- STYLES -->
     <link href="/Content/Libraries/Bootstrap/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />
 
-    <link href="/Content/css/styles.css" rel="stylesheet" />
+    <link href="./Content/css/styles.css" rel="stylesheet" />
     <!-- / STYLES -->
 
     <link rel="shortcut icon" href="/Content/media/img/logos/favicon.ico" />
@@ -19,7 +19,7 @@
     </header>
     <div id="content" ng-controller="SeeStatisticsCtrl">
         <div ng-if="IsAuth">
-            <table>
+            <table id="answerstatistics">
                 <tr ng-repeat="answ in data.votes[AuthIndex].answers">
                     <td>
                         {{answ.name}}
@@ -34,19 +34,46 @@
             </button>
         </div>
         <div ng-if="!IsAuth">
-            <div class="form-group">
-                <label>Your vote's nick</label>
-                <input type="text" class="form-control" ng-model="modellogin" placeholder="Nick" value="" />
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <label>Your vote's nick</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" ng-model="modellogin" placeholder="Nick" value="" />
+                </div>
             </div>
-            <div class="form-group">
-                <label>Your vote's password</label>
-                <input type="password" class="form-control" ng-model="modelpassword" placeholder="Password" value="" />
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <label>Your vote's password</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="password" class="form-control col-md-9" ng-model="modelpassword" placeholder="Password" value="" />
+                </div>
             </div>
             <div>
                 <button class="btn btn-primary btn-lg" ng-click="Auth(modellogin, modelpassword)">
                     Log in
                 </button>
             </div>
+
+            <!--<table id="answerstatistics" border="0">
+                <tr>
+                    <td>
+                        Yes
+                    </td>
+                    <td>
+                        21
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        No
+                    </td>
+                    <td>
+                        10
+                    </td>
+                </tr>
+            </table>-->
         </div>
     </div>
 
